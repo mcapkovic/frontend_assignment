@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import Header from './components/Header';
-import {HeaderStart, HeaderEnd} from './components/styles'
+import Header from "./components/header/Header";
+import { HeaderStart, HeaderEnd } from "./components/header/styles";
+import Footer from './components/footer/Foooter';
 
 const StyledApp = styled.div`
-  font-family: 'Public Sans', sans-serif;
-  color: #2F2F2F;
+  font-family: "Public Sans", sans-serif;
+  color: #2f2f2f;
   display: grid;
   min-height: 100vh;
   grid-template-areas:
     "headerStart  header  headerEnd "
     ".            content .         "
     ".            footer  .         ";
-  grid-template-rows: 40px auto auto;
+  grid-template-rows: 40px auto min-content;
   grid-template-columns: auto 1fr auto;
 
   @media (min-width: 768px) {
@@ -24,7 +25,6 @@ const StyledApp = styled.div`
       "headerStart  header  header  headerEnd "
       ".            content image   .         "
       ".            footer  footer  .         ";
-    grid-template-rows: 40px auto auto;
     grid-template-columns:
       minmax(10px, auto) minmax(auto, 690px) minmax(auto, 450px)
       minmax(10px, auto);
@@ -44,14 +44,14 @@ const Image = styled.div`
   }
 `;
 
-const Footer = styled.footer`
-  background: orange;
-  grid-area: footer;
-  display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
-  padding: 100px 0;
-`;
+// const Footer = styled.footer`
+//   background: orange;
+//   grid-area: footer;
+//   display: flex;
+//   justify-content: space-between;
+//   /* align-items: center; */
+//   padding: 100px 0;
+// `;
 
 function App() {
   return (

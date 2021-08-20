@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledHeader, SocialMedia, Name } from "./styles";
-import { Instagram, Facebook } from "../icons";
+import { Instagram, Facebook } from "../../icons";
 
 function Header(props) {
   return (
