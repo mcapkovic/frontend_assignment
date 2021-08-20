@@ -44,15 +44,6 @@ const Image = styled.div`
   }
 `;
 
-// const Footer = styled.footer`
-//   background: orange;
-//   grid-area: footer;
-//   display: flex;
-//   justify-content: space-between;
-//   /* align-items: center; */
-//   padding: 100px 0;
-// `;
-
 function App() {
   return (
     <StyledApp>
