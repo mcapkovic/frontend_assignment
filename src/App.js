@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import Header from './components/Header';
+import {HeaderStart, HeaderEnd} from './components/styles'
 
 const StyledApp = styled.div`
+  font-family: 'Public Sans', sans-serif;
+  color: #2F2F2F;
   display: grid;
   min-height: 100vh;
   grid-template-areas:
     "headerStart  header  headerEnd "
     ".            content .         "
     ".            footer  .         ";
-  grid-template-rows: auto auto auto;
+  grid-template-rows: 40px auto auto;
   grid-template-columns: auto 1fr auto;
 
   @media (min-width: 768px) {
@@ -20,28 +24,11 @@ const StyledApp = styled.div`
       "headerStart  header  header  headerEnd "
       ".            content image   .         "
       ".            footer  footer  .         ";
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 40px auto auto;
     grid-template-columns:
       minmax(10px, auto) minmax(auto, 690px) minmax(auto, 450px)
       minmax(10px, auto);
   }
-`;
-
-const Header = styled.header`
-  background: red;
-  grid-area: header;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const HeaderStart = styled.div`
-  background: purple;
-  grid-area: headerStart;
-`;
-
-const HeaderEnd = styled.div`
-  background: gray;
-  grid-area: headerEnd;
 `;
 
 const Content = styled.div`
