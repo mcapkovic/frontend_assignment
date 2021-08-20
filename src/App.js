@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Header from "./components/header/Header";
 import { HeaderStart, HeaderEnd } from "./components/header/styles";
 import Footer from "./components/footer/Foooter";
-import { Button, ButtonPrimary, Pager } from "./components/common";
+import { Button, ButtonPrimary, Pager, Input } from "./components/common";
 
 const StyledApp = styled.div`
   font-family: "Public Sans", sans-serif;
@@ -55,6 +55,8 @@ function App() {
         <Button>dddddd</Button> <ButtonPrimary>sfsdfs</ButtonPrimary>
         <ButtonPrimary disabled>sfsdfs</ButtonPrimary>
         <Pager curentPage={3} total={3}/>
+        <Input id='inpt1' label='test' placeholder='haha'/>
+        <Input/>
       </Content>
       <Image>
         <img src="dog.png" alt="dog" />
