@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./components/header/Header";
 import { HeaderStart, HeaderEnd } from "./components/header/styles";
-import Footer from './components/footer/Foooter';
+import Footer from "./components/footer/Foooter";
 
 const StyledApp = styled.div`
   font-family: "Public Sans", sans-serif;
@@ -48,30 +48,13 @@ function App() {
   return (
     <StyledApp>
       <HeaderStart />
-      <Header>
-        <div>text</div>
-        <div>social</div>
-      </Header>
+      <Header />
       <HeaderEnd />
       <Content>form</Content>
       <Image>
         <img src="dog.png" alt="dog" />
       </Image>
-      <Footer>
-        <div>logo</div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
-          interdum ipsum, sit amet.{" "}
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
-          interdum ipsum, sit amet.{" "}
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
-          interdum ipsum, sit amet.{" "}
-        </div>
-      </Footer>
+      <Footer />
     </StyledApp>
   );
 }
