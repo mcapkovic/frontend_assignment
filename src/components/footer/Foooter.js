@@ -2,23 +2,23 @@ import React from "react";
 import { StyledFooter, Logo, Link } from "./styles";
 import { FullLogo } from "../../logos";
 import Section from "./Section";
-
-const TEXT =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in interdum ipsum, sit amet.";
+import { useTranslation } from "react-i18next";
 
 function Footer(props) {
+  const { t } = useTranslation();
+
   return (
     <StyledFooter>
       <Logo>
         <FullLogo />
       </Logo>
-      <Section title="Nadácia Good boy">
-        <Link>O projekte</Link>
-        <Link>Ako na to</Link>
-        <Link>Kontakt</Link>
+      <Section title={t("foundation_name")}>
+        <Link>{t("about")}</Link>
+        <Link> {t("how_to")}</Link>
+        <Link>{t("contact")}</Link>
       </Section>
-      <Section title="Nadácia Good boy">{TEXT}</Section>
-      <Section title="Nadácia Good boy">{TEXT}</Section>
+      <Section title={t("foundation_name")}>{t("lorem_ipsum")}</Section>
+      <Section title={t("foundation_name")}>{t("lorem_ipsum")}</Section>
     </StyledFooter>
   );
 }
