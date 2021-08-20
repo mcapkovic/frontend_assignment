@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "./components/header/Header";
 import { HeaderStart, HeaderEnd } from "./components/header/styles";
 import Footer from "./components/footer/Foooter";
+import { Button, ButtonPrimary } from "./components/common";
 
 const StyledApp = styled.div`
   font-family: "Public Sans", sans-serif;
@@ -32,7 +33,7 @@ const StyledApp = styled.div`
 `;
 
 const Content = styled.div`
-  background: green;
+  /* background: green; */
   grid-area: content;
 `;
 
@@ -50,7 +51,10 @@ function App() {
       <HeaderStart />
       <Header />
       <HeaderEnd />
-      <Content>form</Content>
+      <Content>
+        <Button>dddddd</Button> <ButtonPrimary>sfsdfs</ButtonPrimary>
+        <ButtonPrimary disabled>sfsdfs</ButtonPrimary>
+      </Content>
       <Image>
         <img src="dog.png" alt="dog" />
       </Image>
