@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledApp = styled.div`
-  background: papayawhip;
   display: grid;
   min-height: 100vh;
   grid-template-areas:
@@ -51,10 +50,8 @@ const Content = styled.div`
 `;
 
 const Image = styled.div`
-  background: blue;
   grid-area: image;
   display: none;
-
   @media (min-width: 1024px) {
     display: block;
   }
@@ -79,7 +76,9 @@ function App() {
       </Header>
       <HeaderEnd />
       <Content>form</Content>
-      <Image>img</Image>
+      <Image>
+        <img src="dog.png" alt="dog" />
+      </Image>
       <Footer>
         <div>logo</div>
         <div>
