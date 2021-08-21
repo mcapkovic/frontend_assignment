@@ -32,6 +32,7 @@ const Dropdown = ({ items, label, placeholder }) => {
     dropdownContainer.current.addEventListener("keypress", onKeypress);
     dropdownContainer.current.addEventListener("keydown", onKeydown);
     return () => {
+      if(!dropdownContainer.current) return 
       dropdownContainer.current.removeEventListener("keypress", onKeypress);
       dropdownContainer.current.removeEventListener("keydown", onKeydown);
     };
@@ -109,7 +110,7 @@ const Dropdown = ({ items, label, placeholder }) => {
         }}
       >
         <Title>
-          {label && <Label>dfadf</Label>}
+          {label && <Label>{label}</Label>}
           {title ? <Value>{title}</Value> : <Value>{placeholder}</Value>}
         </Title>
         <ArrowSvgContainer
