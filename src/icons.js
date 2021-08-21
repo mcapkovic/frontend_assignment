@@ -69,8 +69,7 @@ export function Wallet(props) {
       {...props}
     >
       <g
-        clipPath="url(#prefix__clip0)"
-        stroke="purple"
+        stroke="#9F9F9F"
         strokeWidth={2}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -79,11 +78,6 @@ export function Wallet(props) {
         <path d="M2.567 2.756l16.063 4.01c1.934.483 3.516 2.51 3.516 4.505v14.5c0 1.994-1.588 3.25-3.529 2.793l-13.484-3.17c-1.941-.458-3.529-2.463-3.529-4.456V5.229A3.635 3.635 0 015.23 1.604h20.542a3.635 3.635 0 013.625 3.625v13.292a3.636 3.636 0 01-3.625 3.625h-3.625M12.48 5.23h12.082" />
         <path d="M16.708 19.73a2.417 2.417 0 100-4.834 2.417 2.417 0 000 4.833zM22.146 11.27h2.416" />
       </g>
-      <defs>
-        <clipPath id="prefix__clip0">
-          <path fill="#fff" transform="translate(1 1)" d="M0 0h29v29H0z" />
-        </clipPath>
-      </defs>
     </svg>
   );
 }
