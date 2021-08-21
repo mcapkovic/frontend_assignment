@@ -19,8 +19,11 @@ export const formSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    updateValue: (state, action) => {
+    updateField: (state, action) => {
       state[action.payload.field] = action.payload.value;
+    },
+    updateAmount: (state, action) => {
+      state.value = action.payload;
     },
   },
 });
@@ -47,9 +50,11 @@ export const formSlice = createSlice({
 //   },
 // });
 
-export const { updateValue } = formSlice.actions;
+export const { updateField, updateAmount } = formSlice.actions;
 
 export const shelterForm = (state) => state.shelterForm;
+export const formAmount = (state) => state.shelterForm.value;
+
 
 // // The function below is called a selector and allows us to select a value from
 // // the state. Selectors can also be defined inline where they're used instead of

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { Input, Label } from "../../../common";
 import { Step, Inputs } from "./styles";
-import { shelterForm, updateValue } from "../../formSlice";
+import { shelterForm, updateField } from "../../formSlice";
 
 function StepTwo(props) {
   const { t } = useTranslation();
@@ -11,9 +11,9 @@ function StepTwo(props) {
   const state = useSelector(shelterForm);
 
   function handleChange(e) {
-    dispatch(updateValue({ field: e.target.name, value: e.target.value }));
+    dispatch(updateField({ field: e.target.name, value: e.target.value }));
   }
-  
+
   return (
     <Step>
       <Label label={t("about_you")} />

@@ -25,18 +25,13 @@ function StepOne(props) {
         isSingleShelter={isSingleShelter}
         setIsSingleShelter={setIsSingleShelter}
       />
-
       <Item>
-        {isSingleShelter && (
-          <>
-            <Label label={t("about_you")} isRequiredLabel={t("optional")} />
-            <Dropdown
-              label={t("shelter")}
-              placeholder={t("choose_shelter")}
-              items={["1x", "2x", "3x", "4x or more"]}
-            />
-          </>
-        )}
+        <Label label={t("about_you")} isRequiredLabel={t("optional")} />
+        <Dropdown
+          label={t("shelter")}
+          placeholder={t("choose_shelter")}
+          items={["1x", "2x", "3x", "4x or more"]}
+        />
       </Item>
 
       <div>
