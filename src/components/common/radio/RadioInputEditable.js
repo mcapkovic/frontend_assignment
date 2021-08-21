@@ -11,10 +11,12 @@ import {
 } from "./styles";
 
 function RadioInputEditable(props) {
-  const { children, id, after, value, ...otherProps } = props;
+  const { children, id, after, value, onChange, defaultValue, ...otherProps } =
+    props;
   const inputRef = React.useRef();
   const isAutofocusDisabled = React.useRef(false);
-  const [localValue, setLocalValue] = React.useState(value || "");
+  const [localValue, setLocalValue] = React.useState(defaultValue || "");
+  const currentValue = value === undefined ? localValue : value;
 
   function disableAutofocus(e) {
     if (!e.shiftKey) return;
@@ -31,18 +33,31 @@ function RadioInputEditable(props) {
     inputRef.current.focus();
   }
 
+  function handleCustomInputChange(e) {
+    setLocalValue(e.target.value);
+    if (onChange) onChange(e);
+  }
+
   return (
     <EditableRadio>
-      <Dot {...otherProps} id={id} value={value} onFocus={focusInput} />
+      <Dot
+        {...otherProps}
+        id={id}
+        value={value}
+        onFocus={focusInput}
+        onChange={onChange}
+      />
       <LabelWithUnderline htmlFor={id}>
-        <Underline>{localValue ? localValue : <Spacer>0</Spacer>}</Underline>
+        <Underline>
+          {currentValue ? currentValue : <Spacer>0</Spacer>}
+        </Underline>
         {after && <After>{after}</After>}
       </LabelWithUnderline>
       <CustomInput
         ref={inputRef}
         onKeyDown={disableAutofocus}
-        value={localValue}
-        onChange={(e) => setLocalValue(e.target.value)}
+        value={currentValue}
+        onChange={handleCustomInputChange}
       />
     </EditableRadio>
   );

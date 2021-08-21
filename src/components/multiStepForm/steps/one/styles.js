@@ -5,11 +5,6 @@ export const Step = styled.div`
   margin-bottom: 72px;
 `;
 
-export const Item = styled.div`
-  margin-top: 56px;
-  margin-bottom: 40px;
-`;
-
 export const StyledPicker = styled.div`
   & > * {
     margin-bottom: 7px;

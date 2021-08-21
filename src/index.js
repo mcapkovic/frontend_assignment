@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from 'react-redux';
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import sk from "./translations/sk.json";
+import { store } from './app/store';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -24,7 +26,9 @@ i18n
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
