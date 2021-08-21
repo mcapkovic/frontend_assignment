@@ -1,10 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const initialState = {
-//   value: 0,
-//   status: "idle",
-// };
-
 const initialState = {
   firstName: "John",
   lastName: "Doe",
@@ -12,6 +7,7 @@ const initialState = {
   phone: "0911111111",
   value: 50,
   shelterID: 1,
+  donationMode: 'all',
 };
 
 export const formSlice = createSlice({
@@ -24,6 +20,9 @@ export const formSlice = createSlice({
     },
     updateAmount: (state, action) => {
       state.value = action.payload;
+    },
+    updateDonationMode: (state, action) => {
+      state.donationMode = action.payload;
     },
   },
 });
@@ -50,10 +49,11 @@ export const formSlice = createSlice({
 //   },
 // });
 
-export const { updateField, updateAmount } = formSlice.actions;
+export const { updateField, updateAmount, updateDonationMode } = formSlice.actions;
 
 export const shelterForm = (state) => state.shelterForm;
 export const formAmount = (state) => state.shelterForm.value;
+export const formDonationMode = (state) => state.shelterForm.donationMode;
 
 
 // // The function below is called a selector and allows us to select a value from

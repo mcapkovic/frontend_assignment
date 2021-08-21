@@ -1,5 +1,7 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { formDonationMode, updateDonationMode } from "../../../formSlice";
 import {
   ButtonGroup,
   ButtonEnd,
@@ -10,19 +12,25 @@ import {
 import { Paw, Wallet } from "../../../../../icons";
 
 function DonationButtonGroup(props) {
-  const { isSingleShelter, setIsSingleShelter } = props;
   const { t } = useTranslation();
-  const [all, setAll] = React.useState(true);
+  const dispatch = useDispatch();
+  const mode = useSelector(formDonationMode);
 
   return (
     <ButtonGroup>
-      <ButtonStart selected={isSingleShelter} onClick={() => setIsSingleShelter(true)}>
+      <ButtonStart
+        selected={mode === "single"}
+        onClick={() => dispatch(updateDonationMode("single"))}
+      >
         <IconCircle>
           <Wallet />
         </IconCircle>
         <Label>{t("specific_shelter_help")}</Label>
       </ButtonStart>
-      <ButtonEnd selected={!isSingleShelter} onClick={() => setIsSingleShelter(false)}>
+      <ButtonEnd
+        selected={mode === "all"}
+        onClick={() => dispatch(updateDonationMode("all"))}
+      >
         <IconCircle>
           <Paw />
         </IconCircle>
