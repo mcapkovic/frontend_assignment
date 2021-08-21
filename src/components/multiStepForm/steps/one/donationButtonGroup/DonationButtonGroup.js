@@ -10,20 +10,19 @@ import {
 import { Paw, Wallet } from "../../../../../icons";
 
 function DonationButtonGroup(props) {
-  const { label, data } = props;
+  const { isSingleShelter, setIsSingleShelter } = props;
   const { t } = useTranslation();
-
   const [all, setAll] = React.useState(true);
 
   return (
     <ButtonGroup>
-      <ButtonStart selected={!all} onClick={() => setAll(false)}>
+      <ButtonStart selected={isSingleShelter} onClick={() => setIsSingleShelter(true)}>
         <IconCircle>
           <Wallet />
         </IconCircle>
         <Label>{t("specific_shelter_help")}</Label>
       </ButtonStart>
-      <ButtonEnd selected={all} onClick={() => setAll(true)}>
+      <ButtonEnd selected={!isSingleShelter} onClick={() => setIsSingleShelter(false)}>
         <IconCircle>
           <Paw />
         </IconCircle>

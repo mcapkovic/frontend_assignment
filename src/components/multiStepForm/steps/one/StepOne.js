@@ -17,18 +17,26 @@ import AmountPicker from "./AmountPicker";
 import DonationButtonGroup from "./donationButtonGroup/DonationButtonGroup";
 function StepOne(props) {
   const { t } = useTranslation();
+  const [isSingleShelter, setIsSingleShelter] = React.useState(false);
 
   return (
     <Step>
-      <DonationButtonGroup />
+      <DonationButtonGroup
+        isSingleShelter={isSingleShelter}
+        setIsSingleShelter={setIsSingleShelter}
+      />
 
       <Item>
-        <Label label={t("about_you")} isRequiredLabel={t("optional")} />
-        <Dropdown
-          label={t("shelter")}
-          placeholder={t("choose_shelter")}
-          items={["1x", "2x", "3x", "4x or more"]}
-        />
+        {isSingleShelter && (
+          <>
+            <Label label={t("about_you")} isRequiredLabel={t("optional")} />
+            <Dropdown
+              label={t("shelter")}
+              placeholder={t("choose_shelter")}
+              items={["1x", "2x", "3x", "4x or more"]}
+            />
+          </>
+        )}
       </Item>
 
       <div>
