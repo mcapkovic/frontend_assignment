@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Input, Label } from "../../../common";
 // import {  } from "./styles";
-import { FormTitle } from "../../common/styles";
+import { FormTitle } from "../../common";
 
 function StepTwo(props) {
   const { t } = useTranslation();

@@ -12,7 +12,7 @@ import {
   Checkbox,
 } from "../../../common";
 // import {  } from "./styles";
-import { FormTitle } from "../../common/styles";
+import { FormTitle } from "../../common";
 
 function StepOne(props) {
   const { t } = useTranslation();
