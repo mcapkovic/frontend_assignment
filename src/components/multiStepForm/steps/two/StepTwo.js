@@ -1,16 +1,6 @@
 import React from "react";
-// import { Instagram, Facebook } from "../../../icons";
 import { useTranslation } from "react-i18next";
-import {
-  Button,
-  ButtonPrimary,
-  Pager,
-  Input,
-  RadioInput,
-  RadioInputEditable,
-  Dropdown,
-  Checkbox,
-} from "../../../common";
+import { Input, Label } from "../../../common";
 // import {  } from "./styles";
 import { FormTitle } from "../../common/styles";
 
@@ -20,6 +10,11 @@ function StepTwo(props) {
   return (
     <div>
       <FormTitle> {t("fill_info")}</FormTitle>
+      <Label label={t("about_you")} isRequiredLabel={t("optional")} />
+      <Input label={t("name")} placeholder={t("add_name")} />
+      <Input label={t("surname")} placeholder={t("add_surname")} />
+      <Input label={t("emai_address")} placeholder={t("add_email")} />
+      <Input label={t("phone_number")} />
     </div>
   );
 }

@@ -8,4 +8,10 @@ export const FormTitle = styled.div`
   line-height: 52px;
   color: #000000;
   letter-spacing: 0.01em;
+  /* margin-bottom: 28px; */
 `;
+
+export const SectionLabel = styled.div`
+ 
+`;
+
