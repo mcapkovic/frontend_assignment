@@ -11,6 +11,7 @@ import {
   RadioInput,
   RadioInputEditable,
   Dropdown,
+  Checkbox,
 } from "./components/common";
 
 const StyledApp = styled.div`
@@ -75,6 +76,7 @@ function App() {
         <br />
         <Dropdown label='test' placeholder='choose' items={["1x", "2x", "3x", "4x or more"]} />
 
+    <Checkbox id='chcbx' label='dfsdf'/>
       </Content>
       <Image>
         <img src="dog.png" alt="dog" />

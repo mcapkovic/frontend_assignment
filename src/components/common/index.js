@@ -4,3 +4,5 @@ export { default as Input } from "./input/Input";
 export { default as RadioInput } from "./radio/RadioInput";
 export { default as RadioInputEditable } from "./radio/RadioInputEditable";
 export { default as Dropdown } from "./dropdown/Dropdown";
+export { default as Checkbox } from "./checkbox/Checkbox";
+
