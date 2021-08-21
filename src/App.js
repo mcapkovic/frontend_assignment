@@ -10,6 +10,7 @@ import {
   Input,
   RadioInput,
   RadioInputEditable,
+  Dropdown,
 } from "./components/common";
 
 const StyledApp = styled.div`
@@ -71,6 +72,9 @@ function App() {
           100 $
         </RadioInput>
         <RadioInputEditable id="custom" name="drone" value="louie" after="$" />
+        <br />
+        <Dropdown label='test' placeholder='choose' items={["1x", "2x", "3x", "4x or more"]} />
+
       </Content>
       <Image>
         <img src="dog.png" alt="dog" />

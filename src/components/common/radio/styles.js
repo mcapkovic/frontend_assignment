@@ -46,6 +46,10 @@ export const Label = styled.label`
   display: inline-block;
 `;
 
+export const LabelWithUnderline = styled(Label)`
+  padding: 16px 16px 15px 16px;
+`;
+
 export const Underline = styled.div`
   border-bottom: 1px solid #c9c9c9;
   min-width: 33px;

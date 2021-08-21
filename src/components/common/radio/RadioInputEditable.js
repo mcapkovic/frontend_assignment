@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {
   EditableRadio,
-  Label,
+  LabelWithUnderline,
   Dot,
   Underline,
   After,
@@ -34,10 +34,10 @@ function RadioInputEditable(props) {
   return (
     <EditableRadio>
       <Dot {...otherProps} id={id} value={value} onFocus={focusInput} />
-      <Label htmlFor={id}>
+      <LabelWithUnderline htmlFor={id}>
         <Underline>{localValue ? localValue : <Spacer>0</Spacer>}</Underline>
         {after && <After>{after}</After>}
-      </Label>
+      </LabelWithUnderline>
       <CustomInput
         ref={inputRef}
         onKeyDown={disableAutofocus}
