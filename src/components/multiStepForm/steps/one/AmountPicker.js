@@ -1,10 +1,10 @@
 import React from "react";
 import { RadioInput, RadioInputEditable } from "../../../common";
-// import {  } from "./styles";
+import { StyledPicker } from "./styles";
 
 function AmountPicker(props) {
   return (
-    <div>
+    <StyledPicker>
       <RadioInput id="value_5" name="donation" value="5">
         5 $
       </RadioInput>
@@ -29,7 +29,7 @@ function AmountPicker(props) {
         value=""
         after="$"
       />
-    </div>
+    </StyledPicker>
   );
 }
 

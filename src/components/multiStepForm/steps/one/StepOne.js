@@ -12,27 +12,30 @@ import {
   Checkbox,
   Label,
 } from "../../../common";
-// import {  } from "./styles";
-import { FormTitle } from "../../common";
+import { Step, Item } from "./styles";
 import AmountPicker from "./AmountPicker";
 import DonationButtonGroup from "./donationButtonGroup/DonationButtonGroup";
 function StepOne(props) {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <FormTitle> {t("choose_how_to_help")}</FormTitle>
+    <Step>
       <DonationButtonGroup />
-      <Label label={t("about_you")} isRequiredLabel={t("optional")} />
-      <Dropdown
-        label={t("shelter")}
-        placeholder={t("choose_shelter")}
-        items={["1x", "2x", "3x", "4x or more"]}
-      />
 
-      <Label label={t("donate_amount")} />
-      <AmountPicker />
-    </div>
+      <Item>
+        <Label label={t("about_you")} isRequiredLabel={t("optional")} />
+        <Dropdown
+          label={t("shelter")}
+          placeholder={t("choose_shelter")}
+          items={["1x", "2x", "3x", "4x or more"]}
+        />
+      </Item>
+
+      <div>
+        <Label label={t("donate_amount")} />
+        <AmountPicker />
+      </div>
+    </Step>
   );
 }
 

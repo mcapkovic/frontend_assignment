@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledPager = styled.div`
   display: flex;
+  margin: ${({ margin }) => margin};
 `;
 
 export const Page = styled.div`
