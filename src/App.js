@@ -3,7 +3,14 @@ import styled from "styled-components";
 import Header from "./components/header/Header";
 import { HeaderStart, HeaderEnd } from "./components/header/styles";
 import Footer from "./components/footer/Foooter";
-import { Button, ButtonPrimary, Pager, Input } from "./components/common";
+import {
+  Button,
+  ButtonPrimary,
+  Pager,
+  Input,
+  RadioInput,
+  RadioInputEditable,
+} from "./components/common";
 
 const StyledApp = styled.div`
   font-family: "Public Sans", sans-serif;
@@ -54,9 +61,35 @@ function App() {
       <Content>
         <Button>dddddd</Button> <ButtonPrimary>sfsdfs</ButtonPrimary>
         <ButtonPrimary disabled>sfsdfs</ButtonPrimary>
-        <Pager curentPage={3} total={3}/>
-        <Input id='inpt1' label='test' placeholder='haha'/>
-        <Input/>
+        <Pager curentPage={3} total={3} />
+        <Input id="inpt1" label="test" placeholder="haha" />
+        <Input />
+
+
+        <RadioInput id="huey" name="drone" value="huey" 
+        //  onChange={e => console.log(e.target.value)}
+         >30 $</RadioInput>
+        <RadioInput id="dewey" name="drone" value="dewey" >100 $</RadioInput>
+        {/* <RadioInput id="louie" name="drone" value="louie" ><span>s33333</span>$</RadioInput> */}
+        <RadioInputEditable id="custom" name="drone" value="louie" after='$' />
+
+
+        {/* <div>
+  <input type="radio" id="huey" name="drone" value="huey"
+         checked/>
+  <label for="huey">Huey</label>
+</div>
+
+<div>
+  <input type="radio" id="dewey" name="drone" value="dewey"/>
+  <label for="dewey">Dewey</label>
+</div>
+
+<div>
+  <input type="radio" id="louie" name="drone" value="louie"/>
+  <label for="louie">Louie</label>
+</div> */}
+
       </Content>
       <Image>
         <img src="dog.png" alt="dog" />

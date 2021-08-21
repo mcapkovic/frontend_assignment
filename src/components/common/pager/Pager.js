@@ -16,7 +16,7 @@ function Pager(props) {
 
 Pager.propTypes = {
   curentPage: PropTypes.number.isRequired,
-  children: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
 };
 
 export default Pager;

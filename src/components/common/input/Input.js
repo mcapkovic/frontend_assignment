@@ -14,8 +14,8 @@ function Input(props) {
 }
 
 Input.propTypes = {
-  //   curentPage: PropTypes.number.isRequired,
-  //   children: PropTypes.number.isRequired,
+  label: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default Input;
