@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Header from "./components/header/Header";
 import { HeaderStart, HeaderEnd } from "./components/header/styles";
 import Footer from "./components/footer/Foooter";
+import MultiStepForm from "./components/multiStepForm/MultiStepForm";
+
 import {
   Button,
   ButtonPrimary,
@@ -61,6 +63,8 @@ function App() {
       <Header />
       <HeaderEnd />
       <Content>
+        <MultiStepForm />
+        <hr />
         <Button>dddddd</Button> <ButtonPrimary>sfsdfs</ButtonPrimary>
         <ButtonPrimary disabled>sfsdfs</ButtonPrimary>
         <Pager curentPage={3} total={3} />
@@ -74,9 +78,12 @@ function App() {
         </RadioInput>
         <RadioInputEditable id="custom" name="drone" value="louie" after="$" />
         <br />
-        <Dropdown label='test' placeholder='choose' items={["1x", "2x", "3x", "4x or more"]} />
-
-    <Checkbox id='chcbx' label='dfsdf'/>
+        <Dropdown
+          label="test"
+          placeholder="choose"
+          items={["1x", "2x", "3x", "4x or more"]}
+        />
+        <Checkbox id="chcbx" label="dfsdf" />
       </Content>
       <Image>
         <img src="dog.png" alt="dog" />

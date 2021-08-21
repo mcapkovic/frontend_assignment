@@ -5,6 +5,12 @@
     "contact": "Kontakt",
     "foundation_name": "Nadácia Good boy",
     "foundation_name2": "Nadácia Good Boy",
-    "lorem_ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in interdum ipsum, sit amet."
+    "lorem_ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in interdum ipsum, sit amet.",
+    "choose_how_to_help": "Vyberte si možnosť, ako chcete pomôcť ",
+    "fill_info": "Potrebujeme od Vás zopár informácií",
+    "check_your_info": "Skontrolujte si zadané údaje",
+    "submit_form": "Odoslať formulár",
+    "continue": "Pokračovať",
+    "back": "Späť "
   }
 }
