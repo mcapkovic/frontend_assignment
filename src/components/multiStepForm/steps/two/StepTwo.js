@@ -10,7 +10,7 @@ function StepTwo(props) {
   return (
     <div>
       <FormTitle> {t("fill_info")}</FormTitle>
-      <Label label={t("about_you")} isRequiredLabel={t("optional")} />
+      <Label label={t("about_you")} />
       <Input label={t("name")} placeholder={t("add_name")} />
       <Input label={t("surname")} placeholder={t("add_surname")} />
       <Input label={t("emai_address")} placeholder={t("add_email")} />
