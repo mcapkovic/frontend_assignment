@@ -24,6 +24,9 @@ export const formSlice = createSlice({
     updateDonationMode: (state, action) => {
       state.donationMode = action.payload;
     },
+    updateShelterId: (state, action) => {
+      state.shelterID = action.payload;
+    },
   },
 });
 
@@ -49,11 +52,12 @@ export const formSlice = createSlice({
 //   },
 // });
 
-export const { updateField, updateAmount, updateDonationMode } = formSlice.actions;
+export const { updateField, updateAmount, updateDonationMode, updateShelterId } = formSlice.actions;
 
 export const shelterForm = (state) => state.shelterForm;
 export const formAmount = (state) => state.shelterForm.value;
 export const formDonationMode = (state) => state.shelterForm.donationMode;
+export const formShelterId = (state) => state.shelterForm.shelterID;
 
 
 // // The function below is called a selector and allows us to select a value from

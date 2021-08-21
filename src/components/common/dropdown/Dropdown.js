@@ -16,9 +16,9 @@ import { useFocused, useOnClickOutside } from "./CustomHooks";
  *
  */
 
-const Dropdown = ({ items, label, placeholder }) => {
+const Dropdown = ({ items, label, placeholder, onChange , value}) => {
   const [clicked, setClicked] = useState(false);
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(value);
   const [titleHovered, setTitleHovered] = useState(false);
   const [curIndex, setCurIndex] = useState(-1);
   const dropdown = useRef(null);
@@ -27,6 +27,11 @@ const Dropdown = ({ items, label, placeholder }) => {
   useOnClickOutside(dropdownContainer, () => {
     setClicked(false);
   });
+
+  function handleTitleChange(value){
+    setTitle(value)
+    if(onChange) onChange(value)
+  }
 
   useEffect(() => {
     dropdownContainer.current.addEventListener("keypress", onKeypress);
@@ -45,7 +50,8 @@ const Dropdown = ({ items, label, placeholder }) => {
         setClicked(!clicked);
       }
       if (clicked) {
-        setTitle(items[curIndex]);
+        // setTitle(items[curIndex]);
+        handleTitleChange(items[curIndex]);
         setClicked(false);
       } else if (titleHovered) {
         setClicked(!clicked);
@@ -86,10 +92,12 @@ const Dropdown = ({ items, label, placeholder }) => {
         noBorder={index === items.length - 1}
         onClick={() => {
           setClicked(false);
-          setTitle(item);
+          // setTitle(item);
+          handleTitleChange(item);
+
         }}
       >
-        {item}
+        {item.name}
       </Option>
     );
   });
@@ -111,7 +119,7 @@ const Dropdown = ({ items, label, placeholder }) => {
       >
         <Title>
           {label && <Label>{label}</Label>}
-          {title ? <Value>{title}</Value> : <Value>{placeholder}</Value>}
+          {title ? <Value>{title.name}</Value> : <Value>{placeholder}</Value>}
         </Title>
         <ArrowSvgContainer
           aria
