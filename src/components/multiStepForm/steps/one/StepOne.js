@@ -8,12 +8,13 @@ import DonationButtonGroup from "./donationButtonGroup/DonationButtonGroup";
 import DropdownItem from "./dropdownItem/DropdownItem";
 
 function StepOne(props) {
+  const { shelters } = props;
   const { t } = useTranslation();
 
   return (
     <Step>
       <DonationButtonGroup />
-      <DropdownItem />
+      <DropdownItem data={shelters} />
       <div>
         <Label label={t("donate_amount")} />
         <AmountPicker />

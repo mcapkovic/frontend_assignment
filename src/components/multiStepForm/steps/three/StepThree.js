@@ -7,8 +7,12 @@ import { DataSummary } from "../../common";
 import { shelterForm } from "../../formSlice";
 
 function StepThree(props) {
+  const { shelters } = props;
   const { t } = useTranslation();
   const state = useSelector(shelterForm);
+  const shelterName = shelters.find(
+    (element) => element.id === state.shelterID
+  ) || {};
 
   return (
     <Step>
@@ -21,7 +25,7 @@ function StepThree(props) {
               : t("general_shelter_help")
           }
         />
-        <DataSummary label={t("my_preffered_shelter")} data={state.shelterID} />
+        <DataSummary label={t("my_preffered_shelter")} data={shelterName.name} />
         <DataSummary label={t("help_amount")} data={state.value} />
         <DataSummary
           label={t("name_and_surname")}
