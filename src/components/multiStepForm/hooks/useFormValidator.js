@@ -16,7 +16,7 @@ import { shelterForm } from "../formSlice";
 
 const firstName = yup.string().min(2).max(20);
 const lastName = yup.string().min(2).max(30).required();
-const email = yup.string().email();
+const email = yup.string().email().required();
 const phone = yup.string();
 const value = yup.number().required();
 const shelterID = yup.number().test(
@@ -24,7 +24,7 @@ const shelterID = yup.number().test(
   () => "shelter_is_required",
   (value, context) => {
     if (context.parent.donationMode === "all") return true;
-    if (value) return true;
+    if (value >= 0) return true;
     return false;
   }
 );
