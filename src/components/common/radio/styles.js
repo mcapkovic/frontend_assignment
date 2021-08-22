@@ -15,7 +15,7 @@ export const StyledRadio = styled.div`
   }
 
   input[type="radio"]:focus + label {
-    border-color: black;
+    border-color: #9c9c9c;
   }
 `;
 
@@ -44,6 +44,9 @@ export const Label = styled.label`
   border-radius: 8px;
   padding: 16px;
   display: inline-block;
+  &:hover {
+    border-color: #9c9c9c;
+  }
 `;
 
 export const LabelWithUnderline = styled(Label)`
@@ -61,7 +64,6 @@ export const Spacer = styled.div`
   display: inline-block;
   color: transparent;
 `;
-
 
 export const After = styled.div`
   display: inline-block;

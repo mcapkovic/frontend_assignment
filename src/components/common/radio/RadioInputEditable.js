@@ -58,6 +58,7 @@ function RadioInputEditable(props) {
         onKeyDown={disableAutofocus}
         value={currentValue}
         onChange={handleCustomInputChange}
+        tabIndex="-1"
       />
     </EditableRadio>
   );
