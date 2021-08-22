@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  firstName: "John",
-  lastName: "Doe",
-  email: "john.doe@goodrequest.com",
-  phone: "0911111111",
-  value: 50,
-  shelterID: 0,
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  value: 5,
+  shelterID: -1,
   donationMode: "all",
   shareData: false,
 };
