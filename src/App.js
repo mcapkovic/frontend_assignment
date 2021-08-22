@@ -51,6 +51,8 @@ const Content = styled.div`
 const Image = styled.div`
   grid-area: image;
   display: none;
+  margin-top: 95px;
+  margin-left: 25px;
   @media (min-width: 1024px) {
     display: block;
   }
