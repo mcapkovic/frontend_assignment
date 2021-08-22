@@ -9,6 +9,7 @@ import Controls from "./controls/Controls";
 import { FormTitle } from "./common";
 import useFormValidator from "./hooks/useFormValidator";
 import { ErrorsLog } from "../common";
+import useFetch from "../../hooks/useFetch";
 
 const TITLES = ["choose_how_to_help", "fill_info", "check_your_info"];
 const SHELTERS = [
@@ -78,10 +79,16 @@ const SHELTERS = [
   },
 ];
 
+const API_SHELTERS =
+  "https://frontend-assignment-api.goodrequest.com/api/v1/shelters";
+
 function MultiStepForm() {
   const [currentStep, setCuttenStep] = React.useState(1);
   const { t } = useTranslation();
   const { errors, validateForm } = useFormValidator();
+  const { data } = useFetch(API_SHELTERS);
+  const shelters = data ? data.shelters : [];
+  // const shelters = SHELTERS;
 
   function nextStep() {
     validateForm(currentStep, () => {
@@ -104,10 +111,10 @@ function MultiStepForm() {
     <StyledMultiStepForm onSubmit={handleSubmit}>
       <Pager curentPage={currentStep} total={3} margin="0 0 40px 0" />
       <FormTitle> {t(TITLES[currentStep - 1])}</FormTitle>
-      {currentStep === 1 && <StepOne shelters={SHELTERS} />}
+      {currentStep === 1 && <StepOne shelters={shelters} />}
       {currentStep === 2 && <StepTwo />}
-      {currentStep === 3 && <StepThree shelters={SHELTERS} />}
-      {errors.length > 0 && <ErrorsLog errors={errors}/>}
+      {currentStep === 3 && <StepThree shelters={shelters} />}
+      {errors.length > 0 && <ErrorsLog errors={errors} />}
       <Controls
         goNext={nextStep}
         goBack={prevStep}
