@@ -13,10 +13,10 @@ function Controls(props) {
 
   return (
     <StyledControls>
-      {currentStep > 1 && <Button onClick={goBack}>{t("back")}</Button>}
+      {currentStep > 1 && <Button type="button" onClick={goBack}>{t("back")}</Button>}
       <Spacer />
       {currentStep < totalSteps && (
-        <ButtonPrimary onClick={goNext}>{t("continue")}</ButtonPrimary>
+        <ButtonPrimary type="button" onClick={goNext}>{t("continue")}</ButtonPrimary>
       )}
       {currentStep === totalSteps && (
         <ButtonPrimary type="submit" disabled={!canSubmit}>{t("submit_form")}</ButtonPrimary>

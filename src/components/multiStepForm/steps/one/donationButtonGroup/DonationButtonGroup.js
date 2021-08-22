@@ -19,6 +19,7 @@ function DonationButtonGroup() {
   return (
     <ButtonGroup>
       <ButtonStart
+        type="button"
         selected={mode === "single"}
         onClick={() => dispatch(updateDonationMode("single"))}
       >
@@ -28,6 +29,7 @@ function DonationButtonGroup() {
         <Label>{t("specific_shelter_help")}</Label>
       </ButtonStart>
       <ButtonEnd
+        type="button"
         selected={mode === "all"}
         onClick={() => dispatch(updateDonationMode("all"))}
       >
