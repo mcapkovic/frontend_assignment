@@ -26,10 +26,10 @@ const StyledApp = styled.div`
     ".            content .         "
     ".            footer  .         ";
   grid-template-rows: 40px auto min-content;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(10px, auto) 1fr minmax(10px, auto);
 
   @media (min-width: 768px) {
-    grid-template-columns: auto minmax(auto, 768px) auto;
+    grid-template-columns: auto minmax(auto, 700px) auto;
   }
 
   @media (min-width: 1024px) {
@@ -38,8 +38,8 @@ const StyledApp = styled.div`
       ".            content image   .         "
       ".            footer  footer  .         ";
     grid-template-columns:
-      minmax(10px, auto) minmax(auto, 690px) minmax(auto, 450px)
-      minmax(10px, auto);
+      minmax(25px, auto) minmax(auto, 690px) minmax(auto, 450px)
+      minmax(25px, auto);
   }
 `;
 
