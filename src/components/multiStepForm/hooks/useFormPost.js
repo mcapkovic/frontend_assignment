@@ -31,7 +31,7 @@ function useFormPost(url) {
       email,
       phone,
       value,
-      shelterID,
+      shelterID: shelterID < 0 ? undefined : shelterID,
     });
     const data = await response.json();
     const status = response.status;
