@@ -140,13 +140,15 @@ const Dropdown = ({ items, label, placeholder, onChange, value }) => {
               ? {
                   height: "auto",
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+        
                 }
               : {
                   height: 0,
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-                  //   transition: { type: spring }
                 }
+                
           }
+          transition={{ duration: 0.3, type: "tween" }}
         >
           {options}
         </OptionsContainer>

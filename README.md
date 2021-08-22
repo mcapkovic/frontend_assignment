@@ -1,3 +1,7 @@
+# DEMO → [https://gr.matej.dev/](https://gr.matej.dev/)
+
+external credit: Dropdown is from https://codesandbox.io/s/elegant-dropdown-uj4gx
+
 # Zadanie Frontend developer GoodRequest
 
 Cieľom zadania je vytvoriť jednoduchú aplikáciu v Reacte, ktorá slúži ako formulár pre nadáciu GoodBoy na podporu slovenských útulkov pre psy. 
