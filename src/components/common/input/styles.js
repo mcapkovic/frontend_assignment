@@ -32,3 +32,15 @@ export const InnerInput = styled.input`
     color: #9f9f9f;
   }
 `;
+
+export const CountryImg = styled.img`
+  height: 15px;
+  margin-right: 12px;
+  box-shadow: 0 0 2px 0px rgb(0 0 0 / 31%);
+`;
+
+export const PhoneInputWrap = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+`;

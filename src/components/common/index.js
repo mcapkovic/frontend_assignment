@@ -7,4 +7,4 @@ export { default as Dropdown } from "./dropdown/Dropdown";
 export { default as Checkbox } from "./checkbox/Checkbox";
 export { default as Label } from "./label/Label";
 export { default as ErrorsLog } from "./errors/ErrorsLog";
-
+export { default as PhoneInput } from "./input/PhoneInput";

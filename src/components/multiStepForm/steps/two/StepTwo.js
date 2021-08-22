@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
-import { Input, Label } from "../../../common";
+import { Input, Label, PhoneInput } from "../../../common";
 import { Step, Inputs } from "./styles";
 import { shelterForm, updateField } from "../../formSlice";
 
@@ -39,11 +39,13 @@ function StepTwo() {
           onChange={handleChange}
           name="email"
         />
-        <Input
+        <PhoneInput
           label={t("phone_number")}
           value={state.phone}
           onChange={handleChange}
           name="phone"
+          defaultCountry="SK"
+          placeholder="+421"
         />
       </Inputs>
     </Step>
