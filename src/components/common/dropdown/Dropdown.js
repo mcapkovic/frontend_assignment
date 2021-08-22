@@ -50,7 +50,6 @@ const Dropdown = ({ items, label, placeholder, onChange , value}) => {
         setClicked(!clicked);
       }
       if (clicked) {
-        // setTitle(items[curIndex]);
         handleTitleChange(items[curIndex]);
         setClicked(false);
       } else if (titleHovered) {
@@ -92,7 +91,6 @@ const Dropdown = ({ items, label, placeholder, onChange , value}) => {
         noBorder={index === items.length - 1}
         onClick={() => {
           setClicked(false);
-          // setTitle(item);
           handleTitleChange(item);
 
         }}

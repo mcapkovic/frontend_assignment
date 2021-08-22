@@ -22,7 +22,7 @@ const shelterID = yup.number().test(
   "shelterID-validation",
   () => "shelter_is_required",
   (value, context) => {
-    if (context.parent.donationMode !== "all") return true;
+    if (context.parent.donationMode === "all") return true;
     if (value) return true;
     return false;
   }
