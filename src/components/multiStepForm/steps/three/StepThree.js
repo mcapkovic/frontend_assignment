@@ -1,18 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
+import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { Checkbox } from "../../../common";
 import { Step, Summary } from "./styles";
 import { DataSummary } from "../../common";
-import { shelterForm } from "../../formSlice";
+import { shelterForm, updateShareData } from "../../formSlice";
 
 function StepThree(props) {
   const { shelters } = props;
   const { t } = useTranslation();
   const state = useSelector(shelterForm);
-  const shelterName = shelters.find(
-    (element) => element.id === state.shelterID
-  ) || {};
+  const dispatch = useDispatch();
+  const shelterName =
+    shelters.find((element) => element.id === state.shelterID) || {};
 
   return (
     <Step>
@@ -25,8 +26,11 @@ function StepThree(props) {
               : t("general_shelter_help")
           }
         />
-        <DataSummary label={t("my_preffered_shelter")} data={shelterName.name} />
-        <DataSummary label={t("help_amount")} data={ `${state.value} €`} />
+        <DataSummary
+          label={t("my_preffered_shelter")}
+          data={shelterName.name}
+        />
+        <DataSummary label={t("help_amount")} data={`${state.value} €`} />
         <DataSummary
           label={t("name_and_surname")}
           data={`${state.firstName} ${state.lastName}`}
@@ -34,9 +38,18 @@ function StepThree(props) {
         <DataSummary label={t("emai_address")} data={state.email} />
         <DataSummary label={t("phone_number")} data={state.phone} />
       </Summary>
-      <Checkbox id="chcbx_agree" label={t("personal_data_agreement")} />
+      <Checkbox
+        id="chcbx_agree"
+        label={t("personal_data_agreement")}
+        onChange={(e) => dispatch(updateShareData(e.target.checked))}
+        checked={state.shareData}
+      />
     </Step>
   );
 }
+
+StepThree.propTypes = {
+  shelters: PropTypes.array,
+};
 
 export default StepThree;

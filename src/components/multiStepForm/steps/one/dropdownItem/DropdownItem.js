@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { formShelterId, updateShelterId } from "../../../formSlice";
@@ -32,5 +33,9 @@ function DropdownItem(props) {
     </Item>
   );
 }
+
+DropdownItem.propTypes = {
+  data: PropTypes.array,
+};
 
 export default DropdownItem;

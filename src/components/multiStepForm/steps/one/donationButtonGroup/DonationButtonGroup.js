@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import { Paw, Wallet } from "../../../../../icons";
 
-function DonationButtonGroup(props) {
+function DonationButtonGroup() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const mode = useSelector(formDonationMode);

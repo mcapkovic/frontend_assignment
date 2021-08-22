@@ -13,7 +13,7 @@ function getIsValueCustom(value) {
   return true;
 }
 
-function AmountPicker(props) {
+function AmountPicker() {
   const dispatch = useDispatch();
   const amount = useSelector(formAmount);
   const isValueCustom = getIsValueCustom(amount);

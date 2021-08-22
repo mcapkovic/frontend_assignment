@@ -66,6 +66,10 @@ function RadioInputEditable(props) {
 RadioInputEditable.propTypes = {
   children: PropTypes.any,
   id: PropTypes.string,
+  after: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  defaultValue: PropTypes.string,
 };
 
 export default RadioInputEditable;

@@ -78,7 +78,7 @@ const SHELTERS = [
   },
 ];
 
-function MultiStepForm(props) {
+function MultiStepForm() {
   const [currentStep, setCuttenStep] = React.useState(1);
   const { t } = useTranslation();
   const { errors, validateForm } = useFormValidator();

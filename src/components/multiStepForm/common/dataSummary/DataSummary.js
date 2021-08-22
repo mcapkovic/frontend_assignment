@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import { StyledDataSummary, Label, Data } from "./styles";
 
 function DataSummary(props) {
@@ -11,5 +11,10 @@ function DataSummary(props) {
     </StyledDataSummary>
   );
 }
+
+DataSummary.propTypes = {
+  data: PropTypes.string,
+  label: PropTypes.string,
+};
 
 export default DataSummary;
