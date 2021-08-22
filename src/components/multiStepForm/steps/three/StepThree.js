@@ -26,7 +26,7 @@ function StepThree(props) {
           }
         />
         <DataSummary label={t("my_preffered_shelter")} data={shelterName.name} />
-        <DataSummary label={t("help_amount")} data={state.value} />
+        <DataSummary label={t("help_amount")} data={ `${state.value} €`} />
         <DataSummary
           label={t("name_and_surname")}
           data={`${state.firstName} ${state.lastName}`}
