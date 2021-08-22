@@ -8,6 +8,7 @@ import StepThree from "./steps/three/StepThree";
 import Controls from "./controls/Controls";
 import { FormTitle } from "./common";
 import useFormValidator from "./hooks/useFormValidator";
+import { ErrorsLog } from "../common";
 
 const TITLES = ["choose_how_to_help", "fill_info", "check_your_info"];
 const SHELTERS = [
@@ -80,26 +81,18 @@ const SHELTERS = [
 function MultiStepForm(props) {
   const [currentStep, setCuttenStep] = React.useState(1);
   const { t } = useTranslation();
-  // const [errors, setErrors] = React.useState([]);
-
   const { errors, validateForm } = useFormValidator();
 
   function nextStep() {
-    const err = validateForm(currentStep, () => {
+    validateForm(currentStep, () => {
       setCuttenStep(currentStep + 1);
     });
-
-    // if (err.length === 0) {
-    //   // setErrors([]);
-    //   setCuttenStep(currentStep + 1);
-    //   return;
-    // }
-
-    // setErrors(err);
   }
 
   function prevStep() {
-    setCuttenStep(currentStep - 1);
+    validateForm(currentStep, () => {
+      setCuttenStep(currentStep - 1);
+    });
   }
 
   function handleSubmit(e) {
@@ -114,11 +107,7 @@ function MultiStepForm(props) {
       {currentStep === 1 && <StepOne shelters={SHELTERS} />}
       {currentStep === 2 && <StepTwo />}
       {currentStep === 3 && <StepThree shelters={SHELTERS} />}
-      <div>
-        {errors.map((err) => (
-          <div>{err}</div>
-        ))}
-      </div>
+      {errors.length > 0 && <ErrorsLog errors={errors}/>}
       <Controls
         goNext={nextStep}
         goBack={prevStep}
