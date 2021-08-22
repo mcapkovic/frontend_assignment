@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { AsYouType } from "libphonenumber-js";
-import { InnerInput, Label, StyledInput, CountryImg, PhoneInputWrap } from "./styles";
+import {
+  InnerInput,
+  Label,
+  StyledInput,
+  CountryImg,
+  PhoneInputWrap,
+} from "./styles";
 
 function PhoneInput(props) {
   const { label, id, onChange, defaultCountry = "SK", ...otherProps } = props;

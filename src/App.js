@@ -3,7 +3,7 @@ import Header from "./components/header/Header";
 import { HeaderStart, HeaderEnd } from "./components/header/styles";
 import Footer from "./components/footer/Foooter";
 import MultiStepForm from "./components/multiStepForm/MultiStepForm";
-import {StyledApp, Content, Image} from './styles';
+import { StyledApp, Content, Image } from "./styles";
 
 function App() {
   return (

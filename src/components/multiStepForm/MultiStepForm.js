@@ -13,7 +13,6 @@ import useFetch from "../../hooks/useFetch";
 import useFormPost from "./hooks/useFormPost";
 
 const TITLES = ["choose_how_to_help", "fill_info", "check_your_info"];
-
 const API_SHELTERS =
   "https://frontend-assignment-api.goodrequest.com/api/v1/shelters";
 const API_POST =

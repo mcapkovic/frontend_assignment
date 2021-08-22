@@ -20,7 +20,7 @@ export const Button = styled.button`
       : "none"};
   color: ${(props) => (props.selected ? "#FFFFFF" : "#585757")};
 
-  &:hover svg{
+  &:hover svg {
     opacity: 0.7;
   }
 `;
