@@ -7,6 +7,8 @@ import StepTwo from "./steps/two/StepTwo";
 import StepThree from "./steps/three/StepThree";
 import Controls from "./controls/Controls";
 import { FormTitle } from "./common";
+import useFormValidator from "./hooks/useFormValidator";
+import { ErrorsLog } from "../common";
 
 const TITLES = ["choose_how_to_help", "fill_info", "check_your_info"];
 const SHELTERS = [
@@ -75,16 +77,22 @@ const SHELTERS = [
     name: "OZ OČAMI PSA",
   },
 ];
-function MultiStepForm(props) {
+
+function MultiStepForm() {
   const [currentStep, setCuttenStep] = React.useState(1);
   const { t } = useTranslation();
+  const { errors, validateForm } = useFormValidator();
 
   function nextStep() {
-    setCuttenStep(currentStep + 1);
+    validateForm(currentStep, () => {
+      setCuttenStep(currentStep + 1);
+    });
   }
 
   function prevStep() {
-    setCuttenStep(currentStep - 1);
+    validateForm(currentStep, () => {
+      setCuttenStep(currentStep - 1);
+    });
   }
 
   function handleSubmit(e) {
@@ -98,7 +106,8 @@ function MultiStepForm(props) {
       <FormTitle> {t(TITLES[currentStep - 1])}</FormTitle>
       {currentStep === 1 && <StepOne shelters={SHELTERS} />}
       {currentStep === 2 && <StepTwo />}
-      {currentStep === 3 && <StepThree shelters={SHELTERS}/>}
+      {currentStep === 3 && <StepThree shelters={SHELTERS} />}
+      {errors.length > 0 && <ErrorsLog errors={errors}/>}
       <Controls
         goNext={nextStep}
         goBack={prevStep}

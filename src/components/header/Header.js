@@ -3,7 +3,7 @@ import { StyledHeader, SocialMedia, Name } from "./styles";
 import { Instagram, Facebook } from "../../icons";
 import { useTranslation } from "react-i18next";
 
-function Header(props) {
+function Header() {
   const { t } = useTranslation();
 
   return (

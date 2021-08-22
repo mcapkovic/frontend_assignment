@@ -13,7 +13,7 @@ function getIsValueCustom(value) {
   return true;
 }
 
-function AmountPicker(props) {
+function AmountPicker() {
   const dispatch = useDispatch();
   const amount = useSelector(formAmount);
   const isValueCustom = getIsValueCustom(amount);
@@ -40,7 +40,7 @@ function AmountPicker(props) {
         checked={amount === OPTIONS[0]}
         onChange={handleChange}
       >
-        {`${OPTIONS[0]} $`}
+        {`${OPTIONS[0]} €`}
       </RadioInput>
       <RadioInput
         id="value_10"
@@ -49,7 +49,7 @@ function AmountPicker(props) {
         checked={amount === OPTIONS[1]}
         onChange={handleChange}
       >
-        {`${OPTIONS[1]} $`}
+        {`${OPTIONS[1]} €`}
       </RadioInput>
       <RadioInput
         id="value_20"
@@ -58,7 +58,7 @@ function AmountPicker(props) {
         checked={amount === OPTIONS[2]}
         onChange={handleChange}
       >
-        {`${OPTIONS[2]} $`}
+        {`${OPTIONS[2]} €`}
       </RadioInput>
       <RadioInput
         id="value_30"
@@ -67,7 +67,7 @@ function AmountPicker(props) {
         checked={amount === OPTIONS[3]}
         onChange={handleChange}
       >
-        {`${OPTIONS[3]} $`}
+        {`${OPTIONS[3]} €`}
       </RadioInput>
       <RadioInput
         id="value_50"
@@ -76,7 +76,7 @@ function AmountPicker(props) {
         checked={amount === OPTIONS[4]}
         onChange={handleChange}
       >
-        {`${OPTIONS[4]} $`}
+        {`${OPTIONS[4]} €`}
       </RadioInput>
       <RadioInput
         id="value_100"
@@ -85,13 +85,13 @@ function AmountPicker(props) {
         checked={amount === OPTIONS[5]}
         onChange={handleChange}
       >
-        {`${OPTIONS[5]} $`}
+        {`${OPTIONS[5]} €`}
       </RadioInput>
       <RadioInputEditable
         id="value_custom"
         name="donation"
         value={isValueCustom ? amount : customAmount.current}
-        after="$"
+        after="€"
         onChange={handleCustomChange}
         checked={isValueCustom}
       />

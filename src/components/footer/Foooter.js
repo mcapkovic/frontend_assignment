@@ -4,7 +4,7 @@ import { FullLogo } from "../../logos";
 import Section from "./Section";
 import { useTranslation } from "react-i18next";
 
-function Footer(props) {
+function Footer() {
   const { t } = useTranslation();
 
   return (

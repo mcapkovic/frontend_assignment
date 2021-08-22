@@ -1,5 +1,5 @@
 import React from "react";
-// import { Instagram, Facebook } from "../../../icons";
+import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { Label } from "../../../common";
 import { Step } from "./styles";
@@ -22,5 +22,9 @@ function StepOne(props) {
     </Step>
   );
 }
+
+StepOne.propTypes = {
+  shelters: PropTypes.array,
+};
 
 export default StepOne;

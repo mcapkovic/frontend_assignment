@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import { Paw, Wallet } from "../../../../../icons";
 
-function DonationButtonGroup(props) {
+function DonationButtonGroup() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const mode = useSelector(formDonationMode);
@@ -19,6 +19,7 @@ function DonationButtonGroup(props) {
   return (
     <ButtonGroup>
       <ButtonStart
+        type="button"
         selected={mode === "single"}
         onClick={() => dispatch(updateDonationMode("single"))}
       >
@@ -28,6 +29,7 @@ function DonationButtonGroup(props) {
         <Label>{t("specific_shelter_help")}</Label>
       </ButtonStart>
       <ButtonEnd
+        type="button"
         selected={mode === "all"}
         onClick={() => dispatch(updateDonationMode("all"))}
       >

@@ -5,7 +5,7 @@ import { Input, Label } from "../../../common";
 import { Step, Inputs } from "./styles";
 import { shelterForm, updateField } from "../../formSlice";
 
-function StepTwo(props) {
+function StepTwo() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const state = useSelector(shelterForm);
