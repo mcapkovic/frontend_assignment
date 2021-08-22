@@ -16,11 +16,18 @@ export const ButtonBase = styled(UnstyledButton)`
   font-size: 14px;
   line-height: 19px;
   padding: 20px 24px;
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 
 export const Button = styled(ButtonBase)`
   background: #f3e2d9;
   color: #2f2f2f;
+  &:focus {
+    border: 1px solid #0000001f;
+    padding: 19px 23px;
+  }
 `;
 
 export const ButtonPrimary = styled(ButtonBase)`
@@ -35,4 +42,8 @@ export const ButtonPrimary = styled(ButtonBase)`
     props.disabled
       ? "#9F9F9F"
       : "linear-gradient(115.41deg, #cd8a64 -1.77%, #c4794f 73.03%)"};
+  &:focus {
+    border: 1px solid #00000070;
+    padding: 19px 23px;
+  }
 `;

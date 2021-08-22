@@ -1,12 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { AsYouType } from "libphonenumber-js";
-import { InnerInput, Label, StyledInput, CountryImg, PhoneInputWrap } from "./styles";
+import {
+  InnerInput,
+  Label,
+  StyledInput,
+  CountryImg,
+  PhoneInputWrap,
+} from "./styles";
 
 function PhoneInput(props) {
-  const { label, id, onChange, defaultCountry = "SK", ...otherProps } = props;
+  const {
+    label,
+    id,
+    onChange,
+    defaultCountry = "SK",
+    value,
+    ...otherProps
+  } = props;
   const country = React.useRef(defaultCountry);
-  const formattedValue = React.useRef("");
+  const formattedValue = React.useRef(value);
 
   function handleChange(e) {
     const asYouType = new AsYouType(defaultCountry);
@@ -14,12 +27,13 @@ function PhoneInput(props) {
     if (asYouType && asYouType.country) country.current = asYouType.country;
     if (asYouType && asYouType.formattedOutput)
       formattedValue.current = asYouType.formattedOutput;
+
+    console.log(asYouType);
     if (onChange) onChange(e);
   }
 
   function handleBlur(e) {
-    if (!formattedValue.current) return;
-    e.target.value = formattedValue.current;
+    e.target.value = formattedValue.current || "";
     if (onChange) onChange(e);
   }
 
@@ -36,6 +50,7 @@ function PhoneInput(props) {
           onChange={handleChange}
           id={id}
           onBlur={handleBlur}
+          value={value}
         />
       </PhoneInputWrap>
     </StyledInput>

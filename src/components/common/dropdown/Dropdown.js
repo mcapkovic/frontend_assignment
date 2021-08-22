@@ -16,7 +16,7 @@ import { useFocused, useOnClickOutside } from "./CustomHooks";
  *
  */
 
-const Dropdown = ({ items, label, placeholder, onChange , value}) => {
+const Dropdown = ({ items, label, placeholder, onChange, value }) => {
   const [clicked, setClicked] = useState(false);
   const [title, setTitle] = useState(value);
   const [titleHovered, setTitleHovered] = useState(false);
@@ -28,16 +28,16 @@ const Dropdown = ({ items, label, placeholder, onChange , value}) => {
     setClicked(false);
   });
 
-  function handleTitleChange(value){
-    setTitle(value)
-    if(onChange) onChange(value)
+  function handleTitleChange(value) {
+    setTitle(value);
+    if (onChange) onChange(value);
   }
 
   useEffect(() => {
     dropdownContainer.current.addEventListener("keypress", onKeypress);
     dropdownContainer.current.addEventListener("keydown", onKeydown);
     return () => {
-      if(!dropdownContainer.current) return 
+      if (!dropdownContainer.current) return;
       dropdownContainer.current.removeEventListener("keypress", onKeypress);
       dropdownContainer.current.removeEventListener("keydown", onKeydown);
     };
@@ -92,7 +92,6 @@ const Dropdown = ({ items, label, placeholder, onChange , value}) => {
         onClick={() => {
           setClicked(false);
           handleTitleChange(item);
-
         }}
       >
         {item.name}
@@ -200,6 +199,13 @@ const TitleContainer = styled(motion.button)`
   font-size: 1rem;
   font-family: "Public Sans", sans-serif;
   cursor: pointer;
+  &:hover {
+    border-color: #9c9c9c;
+  }
+  &:focus-visible{
+    border-color: #cd8b65;
+    outline: none;
+  }
 `;
 
 const ArrowSvgContainer = styled(motion.span)`

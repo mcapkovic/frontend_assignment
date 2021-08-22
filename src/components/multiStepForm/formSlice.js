@@ -1,20 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  firstName: "John",
-  lastName: "Doe",
-  email: "john.doe@goodrequest.com",
-  phone: "0911111111",
-  value: 50,
-  shelterID: 0,
-  donationMode: 'all',
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  value: 5,
+  shelterID: -1,
+  donationMode: "all",
   shareData: false,
 };
 
 export const formSlice = createSlice({
   name: "form",
   initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     updateField: (state, action) => {
       state[action.payload.field] = action.payload.value;
@@ -34,7 +33,13 @@ export const formSlice = createSlice({
   },
 });
 
-export const { updateField, updateAmount, updateDonationMode, updateShelterId , updateShareData} = formSlice.actions;
+export const {
+  updateField,
+  updateAmount,
+  updateDonationMode,
+  updateShelterId,
+  updateShareData,
+} = formSlice.actions;
 
 export const shelterForm = (state) => state.shelterForm;
 export const formAmount = (state) => state.shelterForm.value;

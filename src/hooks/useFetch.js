@@ -6,7 +6,7 @@ function useFetch(url) {
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    setLoading("loading...");
+    setLoading(true);
     setData(null);
     setError(null);
     fetch(url)

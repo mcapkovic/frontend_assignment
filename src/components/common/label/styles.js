@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledLabel = styled.div`
   display: flex;
-  margin-bottom:15px;
+  margin-bottom: 15px;
 `;
 
 export const MainLabel = styled.label`
@@ -23,6 +23,6 @@ export const IsRequiredLabel = styled.div`
   font-weight: 800;
   font-size: 14px;
   line-height: 19px;
-  color: #2F2F2F;
+  color: #2f2f2f;
   opacity: 0.8;
 `;
