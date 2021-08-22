@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormTitle = styled.div`
+export const FormTitle = styled.h1`
   font-family: "Hind", sans-serif;
   font-style: normal;
   font-weight: bold;
