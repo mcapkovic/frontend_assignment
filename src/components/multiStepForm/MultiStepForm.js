@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Pager } from "../common";
-import { StyledMultiStepForm } from "./styles";
+import { StyledMultiStepForm, SubmitMessage } from "./styles";
 import StepOne from "./steps/one/StepOne";
 import StepTwo from "./steps/two/StepTwo";
 import StepThree from "./steps/three/StepThree";
@@ -10,6 +10,7 @@ import { FormTitle } from "./common";
 import useFormValidator from "./hooks/useFormValidator";
 import { ErrorsLog } from "../common";
 import useFetch from "../../hooks/useFetch";
+import useFormPost from "./hooks/useFormPost";
 
 const TITLES = ["choose_how_to_help", "fill_info", "check_your_info"];
 const SHELTERS = [
@@ -81,6 +82,8 @@ const SHELTERS = [
 
 const API_SHELTERS =
   "https://frontend-assignment-api.goodrequest.com/api/v1/shelters";
+const API_POST =
+  "https://frontend-assignment-api.goodrequest.com/api/v1/shelters/contribute";
 
 function MultiStepForm() {
   const [currentStep, setCuttenStep] = React.useState(1);
@@ -89,6 +92,7 @@ function MultiStepForm() {
   const { data } = useFetch(API_SHELTERS);
   const shelters = data ? data.shelters : [];
   // const shelters = SHELTERS;
+  const { post, errors : postErrors, succes } = useFormPost(API_POST);
 
   function nextStep() {
     validateForm(currentStep, () => {
@@ -104,9 +108,11 @@ function MultiStepForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("submit");
+    post();
   }
 
+
+  if (succes) return <SubmitMessage>{succes[0].message}</SubmitMessage>;
   return (
     <StyledMultiStepForm onSubmit={handleSubmit}>
       <Pager curentPage={currentStep} total={3} margin="0 0 40px 0" />
@@ -115,6 +121,8 @@ function MultiStepForm() {
       {currentStep === 2 && <StepTwo />}
       {currentStep === 3 && <StepThree shelters={shelters} />}
       {errors.length > 0 && <ErrorsLog errors={errors} />}
+      {postErrors  && <ErrorsLog errors={[t('post_error')]} />}
+
       <Controls
         goNext={nextStep}
         goBack={prevStep}

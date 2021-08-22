@@ -30,6 +30,7 @@
     "my_preffered_shelter": "Najviac mi záleží na útulku",
     "help_amount": "Suma ktorou chcem pomôcť",
     "name_and_surname": "Meno a priezvisko",
-    "donate_amount": "Suma, ktorou chcem prispieť"
+    "donate_amount": "Suma, ktorou chcem prispieť",
+    "post_error": "Chyba pri ukladaní"
   }
 }
