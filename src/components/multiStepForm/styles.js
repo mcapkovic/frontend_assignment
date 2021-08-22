@@ -11,3 +11,12 @@ export const StyledMultiStepForm = styled.form`
 export const Controls = styled.div`
   display: flex;
 `;
+
+export const SubmitMessage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  font-size: 24px;
+  text-align: center;
+`;

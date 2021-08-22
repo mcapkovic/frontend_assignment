@@ -3,17 +3,18 @@ import * as yup from "yup";
 import { useSelector } from "react-redux";
 import { shelterForm } from "../formSlice";
 
-const firstName = yup.string().test(
-  "firstName-validation",
-  () => "name must be empty or between 2 and 20 characters",
-  (value, context) => {
-    if (value === "") return true;
-    if (value.length > 1 && value.length < 21) return true;
+// const firstName = yup.string().test(
+//   "firstName-validation",
+//   () => "name must be empty or between 2 and 20 characters",
+//   (value, context) => {
+//     if (value === "") return true;
+//     if (value.length > 1 && value.length < 21) return true;
 
-    return false;
-  }
-);
+//     return false;
+//   }
+// );
 
+const firstName = yup.string().min(2).max(20);
 const lastName = yup.string().min(2).max(30).required();
 const email = yup.string().email();
 const phone = yup.string();

@@ -26,17 +26,23 @@ function StepThree(props) {
               : t("general_shelter_help")
           }
         />
-        <DataSummary
-          label={t("my_preffered_shelter")}
-          data={shelterName.name}
-        />
+        {shelterName.name && (
+          <DataSummary
+            label={t("my_preffered_shelter")}
+            data={shelterName.name}
+          />
+        )}
         <DataSummary label={t("help_amount")} data={`${state.value} €`} />
         <DataSummary
           label={t("name_and_surname")}
           data={`${state.firstName} ${state.lastName}`}
         />
-        <DataSummary label={t("emai_address")} data={state.email} />
-        <DataSummary label={t("phone_number")} data={state.phone} />
+        {state.email && (
+          <DataSummary label={t("emai_address")} data={state.email} />
+        )}
+        {state.phone && (
+          <DataSummary label={t("phone_number")} data={state.phone} />
+        )}
       </Summary>
       <Checkbox
         id="chcbx_agree"

@@ -7,9 +7,8 @@ export const ButtonGroup = styled.div`
 export const Button = styled.button`
   all: unset;
   flex: 1;
-  padding: 24px;
   cursor: pointer;
-  /* border: 1px solid #cd8b65; */
+  padding: ${(props) => (props.selected ? "25px 24px 25px 24px" : "24px")};
   border: ${(props) => (props.selected ? "none" : "1px solid #cd8b65")};
   background: ${(props) =>
     props.selected
@@ -23,7 +22,6 @@ export const Button = styled.button`
 `;
 
 export const ButtonStart = styled(Button)`
-  /* background: red; */
   border-radius: 24px 0px 0px 24px;
 
   path {
