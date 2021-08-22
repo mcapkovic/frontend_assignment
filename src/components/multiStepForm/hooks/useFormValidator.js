@@ -24,7 +24,7 @@ const shelterID = yup.number().test(
   () => "shelter_is_required",
   (value, context) => {
     if (context.parent.donationMode === "all") return true;
-    if (value) return true;
+    if (value >= 0) return true;
     return false;
   }
 );
