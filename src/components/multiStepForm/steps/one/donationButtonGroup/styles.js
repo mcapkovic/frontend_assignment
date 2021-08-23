@@ -20,6 +20,11 @@ export const Button = styled.button`
       : "none"};
   color: ${(props) => (props.selected ? "#FFFFFF" : "#585757")};
 
+  svg {
+    transition: opacity 200ms ease-out;
+    opacity: 1;
+  }
+
   &:hover svg {
     opacity: 0.7;
   }
