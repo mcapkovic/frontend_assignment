@@ -16,8 +16,13 @@ export const ButtonBase = styled(UnstyledButton)`
   font-size: 14px;
   line-height: 19px;
   padding: 20px 24px;
+  transition: opacity 200ms ease-out;
+  opacity: 1;
   &:hover {
-    opacity: 0.9;
+    opacity: 0.8;
+  }
+  &:disabled{
+    cursor: not-allowed;
   }
 `;
 
