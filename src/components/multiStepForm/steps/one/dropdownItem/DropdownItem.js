@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { formShelterId, updateShelterId } from "../../../formSlice";
+import {
+  updateShelterId,
+  shelterForm,
+} from "../../../formSlice";
 import { Dropdown, Label } from "../../../../common";
 import { Item } from "./styles";
 
@@ -10,7 +13,8 @@ function DropdownItem(props) {
   const { data } = props;
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const shelterId = useSelector(formShelterId);
+  const { shelterId, donationMode } = useSelector(shelterForm);
+  const isRequired = donationMode !== "all";
 
   function handleShelterChange(value) {
     dispatch(updateShelterId(value.id));
@@ -22,7 +26,10 @@ function DropdownItem(props) {
 
   return (
     <Item>
-      <Label label={t("about_you")} isRequiredLabel={t("optional")} />
+      <Label
+        label={t("about_you")}
+        isRequiredLabel={isRequired ? t("required") : t("optional")}
+      />
       <Dropdown
         label={t("shelter")}
         placeholder={t("choose_shelter")}
