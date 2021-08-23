@@ -19,6 +19,9 @@ export const ButtonBase = styled(UnstyledButton)`
   &:hover {
     opacity: 0.9;
   }
+  &:disabled{
+    cursor: not-allowed;
+  }
 `;
 
 export const Button = styled(ButtonBase)`
