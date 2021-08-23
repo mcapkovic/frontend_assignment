@@ -24,6 +24,7 @@ function StepTwo() {
           value={state.firstName}
           onChange={handleChange}
           name="firstName"
+          id='name'
         />
         <Input
           label={t("surname")}
@@ -31,6 +32,7 @@ function StepTwo() {
           value={state.lastName}
           onChange={handleChange}
           name="lastName"
+          id='surname'
         />
         <Input
           label={t("emai_address")}
@@ -38,6 +40,7 @@ function StepTwo() {
           value={state.email}
           onChange={handleChange}
           name="email"
+          id='email'
         />
         <PhoneInput
           label={t("phone_number")}
@@ -46,6 +49,7 @@ function StepTwo() {
           name="phone"
           defaultCountry="SK"
           placeholder="+421"
+          id='phone'
         />
       </Inputs>
     </Step>
