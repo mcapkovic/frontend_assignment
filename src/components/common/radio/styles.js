@@ -40,6 +40,7 @@ export const Dot = styled.input.attrs({
 `;
 
 export const Label = styled.label`
+  cursor: pointer;
   border: 1px solid #dfdfdf;
   border-radius: 8px;
   padding: 16px;
