@@ -13,7 +13,7 @@ function DropdownItem(props) {
   const { data } = props;
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { shelterId, donationMode } = useSelector(shelterForm);
+  const { shelterID, donationMode } = useSelector(shelterForm);
   const isRequired = donationMode !== "all";
 
   function handleShelterChange(value) {
@@ -21,8 +21,8 @@ function DropdownItem(props) {
   }
 
   const selectedShelter = React.useMemo(() => {
-    return data.find((element) => element.id === shelterId);
-  }, [shelterId, data]);
+    return data.find((element) => element.id === shelterID);
+  }, [shelterID, data]);
 
   return (
     <Item>
