@@ -69,7 +69,11 @@ function useFormValidator() {
         setErrors(err.errors);
       });
   }
-  return { errors, validateForm };
+
+  function resetErrors() {
+    setErrors([]);
+  }
+  return { errors, validateForm, resetErrors };
 }
 
 export default useFormValidator;

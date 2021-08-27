@@ -21,7 +21,7 @@ const API_POST =
 function MultiStepForm() {
   const [currentStep, setCuttenStep] = React.useState(1);
   const { t } = useTranslation();
-  const { errors: formErrors, validateForm } = useFormValidator();
+  const { errors: formErrors, validateForm, resetErrors } = useFormValidator();
   const { post, errors: postErrors, succes } = useFormPost(API_POST);
   const { data } = useFetch(API_SHELTERS);
   const shelters = data ? data.shelters : [];
@@ -33,9 +33,8 @@ function MultiStepForm() {
   }
 
   function prevStep() {
-    validateForm(currentStep, () => {
-      setCuttenStep(currentStep - 1);
-    });
+    setCuttenStep(currentStep - 1)
+    resetErrors()
   }
 
   function handleSubmit(e) {
