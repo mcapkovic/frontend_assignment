@@ -32,6 +32,11 @@
     "help_amount": "Suma ktorou chcem pomôcť",
     "name_and_surname": "Meno a priezvisko",
     "donate_amount": "Suma, ktorou chcem prispieť",
-    "post_error": "Chyba pri ukladaní"
+    "post_error": "Chyba pri ukladaní",
+    "string_min": "{{field}} musí obsahovať minimálne {{value}} znaky",
+    "string_max": "{{field}} môze obsahovať maximálne {{value}} znakov",
+    "num_min": "{{field}} musí byť menej ako {{value}}",
+    "num_max": "{{field}} musí byť viac ako {{value}}",
+    "required_field": "{{field}} je povinné pole"
   }
 }

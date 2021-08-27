@@ -2,26 +2,29 @@ import React from "react";
 import * as yup from "yup";
 import { useSelector } from "react-redux";
 import { shelterForm } from "../formSlice";
+import i18n from "i18next";
 
-// const firstName = yup.string().test(
-//   "firstName-validation",
-//   () => "name must be empty or between 2 and 20 characters",
-//   (value, context) => {
-//     if (value === "") return true;
-//     if (value.length > 1 && value.length < 21) return true;
-
-//     return false;
-//   }
-// );
-
-const firstName = yup.string().min(2).max(20);
-const lastName = yup.string().min(2).max(30).required();
-const email = yup.string().email().required();
+const firstName = yup
+  .string()
+  .min(2, () => i18n.t("string_min", { value: 2, field: i18n.t("name") }))
+  .max(20, () => i18n.t("string_max", { value: 20, field: i18n.t("name") }));
+const lastName = yup
+  .string()
+  .min(2, () => i18n.t("string_min", { value: 2, field: i18n.t("surname") }))
+  .max(30, () => i18n.t("string_max", { value: 30, field: i18n.t("surname") }))
+  .required(() => i18n.t("required_field", { field: i18n.t("surname") }));
+const email = yup
+  .string()
+  .email()
+  .required(() => i18n.t("required_field", { field: i18n.t("emai_address") }));
 const phone = yup.string();
-const value = yup.number().required();
+const value = yup
+  .number()
+  .typeError(() => i18n.t("required_field", { field: i18n.t("help_amount") }))
+  .required(() => i18n.t("required_field", { field: i18n.t("help_amount") }));
 const shelterID = yup.number().test(
   "shelterID-validation",
-  () => "shelter_is_required",
+  () => i18n.t("required_field", { field: i18n.t("shelter") }),
   (value, context) => {
     if (context.parent.donationMode === "all") return true;
     if (value >= 0) return true;
@@ -66,7 +69,11 @@ function useFormValidator() {
         setErrors(err.errors);
       });
   }
-  return { errors, validateForm };
+
+  function resetErrors() {
+    setErrors([]);
+  }
+  return { errors, validateForm, resetErrors };
 }
 
 export default useFormValidator;
