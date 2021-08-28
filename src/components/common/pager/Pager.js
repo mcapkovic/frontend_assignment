@@ -8,7 +8,12 @@ function Pager(props) {
   return (
     <StyledPager margin={margin}>
       {[...Array(total)].map((_, index) => (
-        <Page selected={curentPage === index + 1} key={index} />
+        <Page
+          selected={curentPage === index + 1}
+          key={index}
+          animate={{ width: curentPage === index + 1 ? 45 : 21 }}
+          transition={{ duration: 0.3 }}
+        />
       ))}
     </StyledPager>
   );
