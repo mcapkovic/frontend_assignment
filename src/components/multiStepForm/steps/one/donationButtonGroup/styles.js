@@ -40,7 +40,7 @@ export const Button = styled.button`
   }
 
   &:hover svg {
-    opacity: 0.7 ease-in-out;
+    opacity: 0.7;
   }
 `;
 
